@@ -1,7 +1,7 @@
 use stfu_calc::*;
 
 use fltk::{
-    app::{Sender, event_key, event_original_key, event_text}, button::Button, enums::{Event, Key}, group::GridRange, prelude::*, window::Window, *
+    app::{Sender, event_key}, button::Button, enums::{Event, Key}, group::GridRange, prelude::*, window::Window, *
 };
 use fltk_grid::Grid;
 
@@ -28,7 +28,7 @@ fn main() {
     grid.show_grid(false);
     grid.set_layout(ROWS, COLS);
 
-    let mut display = &mut frame::Frame::default().with_label("0");
+    let display = &mut frame::Frame::default().with_label("0");
     grid.set_widget(display, 0, 0..5).unwrap();
 
     for (i, r) in CalcKey::ROWS.iter().enumerate() {
